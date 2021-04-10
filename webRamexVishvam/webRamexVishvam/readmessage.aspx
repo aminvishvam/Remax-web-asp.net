@@ -58,6 +58,7 @@
         </asp:Table>
         <br>
         <asp:Button ID="btnBack2Msg" runat="server" OnClick="btnBack2Msg_Click" Text="Back To Inbox" CssClass="btn btn-primary" />
+        <br><br><asp:Button ID="ButReply" runat="server" Text="Reply" CssClass="btn btn-primary" OnClick="ButReply_Click"/>
         </div>
     </form>
 </body>

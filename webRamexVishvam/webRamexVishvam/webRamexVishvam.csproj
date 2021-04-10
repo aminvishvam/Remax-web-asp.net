@@ -95,6 +95,7 @@
     <Content Include="Login.aspx" />
     <Content Include="readmessage.aspx" />
     <Content Include="RegisterHouse.aspx" />
+    <Content Include="ReplyMessage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="RegisterHouse.aspx.designer.cs">
       <DependentUpon>RegisterHouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReplyMessage.aspx.cs">
+      <DependentUpon>ReplyMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReplyMessage.aspx.designer.cs">
+      <DependentUpon>ReplyMessage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

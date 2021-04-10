@@ -11,6 +11,7 @@ namespace webRamexVishvam
 {
     public partial class readmessage : System.Web.UI.Page
     {
+        int senderId;
         protected void Page_Load(object sender, EventArgs e)
         {
             string sendernName = Request.QueryString["sndr"];
@@ -32,6 +33,7 @@ namespace webRamexVishvam
                 celtitle2.Text = myReader["Title"].ToString();
                 celdate2.Text = myReader["CreatedDate"].ToString();
                 celSender.Text = sendernName;
+                senderId = Convert.ToInt32(myReader["Sender"]);
                 celMessage.Text = myReader["Message"].ToString();
                 // tabMessage.Rows.Add(aRow);
 
@@ -49,6 +51,12 @@ namespace webRamexVishvam
         protected void btnBack2Msg_Click(object sender, EventArgs e)
         {
             Server.Transfer("RegisterHouse.aspx");
+        }
+
+        protected void ButReply_Click(object sender, EventArgs e)
+        {
+            Session["ReplyId"] = senderId;
+            Server.Transfer("ReplyMessage.aspx");
         }
     }
 }

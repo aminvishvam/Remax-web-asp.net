@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ComposeMessage.aspx.cs" Inherits="webRamexVishvam.ComposeMessage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReplyMessage.aspx.cs" Inherits="webRamexVishvam.ReplyMessage" %>
 
 <!DOCTYPE html>
 
@@ -61,36 +61,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
-    <%--<header><h1 align="center" class="display-1">Remax </h1></header>--%>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-left:20px;margin-right:20px">
-      <a class="navbar-brand" href="index.aspx"><b>RAMEX</b>-Client</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="index.aspx">Home </a>
-          <a class="nav-item nav-link" href="Agents.aspx">Find Agents </a>
-          <a class="nav-item nav-link" href="ComposeMessage.aspx">Message To Agents <span class="sr-only">(current)</span></a>
-          <asp:HyperLink CssClass="nav-item nav-link" runat="server" BorderColor="#FF3300" NavigateUrl="~/Login.aspx">Logout</asp:HyperLink>
-            
-        </div>
-      </div>
-    </nav>
-
     <form id="form1" runat="server" >
     <br>
         <div align="center">
-            <asp:Literal ID="litStatus" runat="server"></asp:Literal>
             <table border="1" class="auto-style1">
                 <tr>
                     <td class="auto-style5">
       
-        <asp:Label ID="Label2" runat="server" Text="To  "></asp:Label> </td>
+                        &nbsp;</td>
                     <td class="auto-style7">
-        <asp:DropDownList ID="cboReceviers" runat="server" Width="587px">
-        </asp:DropDownList>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style8">&nbsp;</td>
                 </tr>
                 <tr>
@@ -130,15 +110,5 @@
             </table>
        </div>
     </form>
-    <h1 class="display-6" style="margin-left:10px">Read Your Messages From Agents</h1>
-    <div class="table" align="center">
-            <asp:Table  ID="tabMessage" runat="server" Width="909px" GridLines="Both" CssClass="table">
-                <asp:TableRow runat="server" BackColor="#000000" Font-Bold="True" ForeColor="white">
-                    <asp:TableCell runat="server">From</asp:TableCell>
-                    <asp:TableCell runat="server">Titles</asp:TableCell>
-                    <asp:TableCell runat="server">Messages</asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
-     </div>
 </body>
 </html>

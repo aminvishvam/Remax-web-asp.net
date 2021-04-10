@@ -32,6 +32,34 @@ namespace webRamexVishvam
                 cboReceviers.Items.Add(new ListItem(member, rdReceivers["refAgentNumber"].ToString()));
                 member = "";
             }
+
+            //See the messages for the user
+            string sql2 = $"SELECT MessageReply.Title, MessageReply.Message, MessageReply.CreatedDate, MessageReply.Receiver, MessageReply.Sender, MessageReply.New, Agents.AgentName, Agents.refAgentNumber, MessageReply.RefMessage FROM(MessageReply INNER JOIN Agents ON MessageReply.Sender = Agents.refAgentNumber) WHERE(MessageReply.Receiver = {refClient})";
+            clsGloble.myCmd = new OleDbCommand(sql2, clsGloble.myCon);
+            OleDbDataReader rdMsgs = clsGloble.myCmd.ExecuteReader();
+
+
+            while (rdMsgs.Read())
+            {
+                TableRow aRow = new TableRow();
+                TableCell aCell = new TableCell();
+                aCell.Text = rdMsgs["AgentName"].ToString();
+                aRow.Cells.Add(aCell);
+
+                aCell = new TableCell();
+
+                aCell.Text = rdMsgs["Title"].ToString();
+
+                aRow.Cells.Add(aCell);
+
+                aCell = new TableCell();
+                aCell.Text = rdMsgs["Message"].ToString();
+                aRow.Cells.Add(aCell);
+               
+            }
+
+
+
             clsGloble.myCon.Close();
         }
 
@@ -54,7 +82,7 @@ namespace webRamexVishvam
             // litStatus.Text = "Msg Sent";
             clsGloble.myCon.Close();
 
-            Server.Transfer("Agents.aspx");
+            Server.Transfer("RegisterHouse.aspx");
         }
     }
 }
